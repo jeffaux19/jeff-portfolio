@@ -1,2050 +1,1598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeff Auxilio — Video Editing, Motion Graphics & AI Works</title>
-  <meta name="description" content="Portfolio of Jeff — a creative specializing in video editing, motion graphics, and AI-assisted visuals. Available for freelance and agency projects." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Jeff Auxilio | Video Editor, Motion Graphics Designer & AI Creative
+    </title>
+    <meta name="author" content="Jeff Auxilio" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Jeff — Motion. Vision. Made." />
-  <meta property="og:description" content="Video editing, motion graphics, and AI works. Available for client and agency projects." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yoursite.com" />
-  <meta property="og:image" content="assets/og-image.jpg" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Jeff Auxilio | Video Editor, Motion Graphics Designer & AI Creative"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <meta
+      property="og:description"
+      content="Portfolio showcasing video editing, motion graphics, brand animations, and AI-assisted creative work. Available for freelance and agency projects."
+    />
 
-  <style>
-    /* ─── TOKENS ─────────────────────────────────────────────────── */
-    :root {
-      --bg:          #F8F7F4;
-      --surface:     #FFFFFF;
-      --text:        #2F3033;
-      --text-mid:    #787878;
-      --accent:      #009FD9;
-      --accent-dark: #007AAA;
-      --border:      #E4E2DD;
-      --nav-h:       64px;
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jeffauxcreative.com/" />
+    <meta
+      property="og:image"
+      content="https://jeffauxcreative.com/about-photo.png"
+    />
+    <meta property="og:site_name" content="Jeff Auxilio Portfolio" />
 
-      --font-display: 'Poppins', sans-serif;
-      --font-body:    'Poppins', sans-serif;
+    <!-- Twitter/X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jeff Auxilio | Video Editor, Motion Graphics Designer & AI Creative"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio of video editing, motion graphics, and AI-assisted creative work."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jeffauxcreative.com/about-photo.png"
+    />
 
-      --ease: cubic-bezier(0.22, 1, 0.36, 1);
-    }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    /* ─── RESET ──────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; }
-    button, input, textarea { font-family: inherit; }
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ─── NAV ──────────────────────────────────────────── -->
+    <nav>
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="Jeff Auxilio" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact" class="nav-cta">Let's work</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
 
-    /* ─── NAV ────────────────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      background: rgba(248, 247, 244, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-      z-index: 100;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-    }
-    .nav-logo img {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      background: var(--text);
-      color: var(--bg) !important;
-      padding: 0.45rem 1.1rem;
-      border-radius: 100px;
-      font-size: 0.85rem !important;
-      font-weight: 600 !important;
-      transition: background 0.25s var(--ease), color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s !important;
-    }
-    .nav-cta:hover {
-      background: var(--accent) !important;
-      color: #fff !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 159, 217, 0.35) !important;
-    }
-
-    /* Hamburger (mobile) */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: transform 0.3s var(--ease), opacity 0.2s;
-    }
-
-    /* ─── HERO ───────────────────────────────────────────────────── */
-    .hero {
-      padding-top: var(--nav-h);
-      padding-bottom: clamp(2rem, 4vw, 3rem);
-    }
-    .hero-label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem) 0;
-    }
-    .hero-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5.5vw, 5.5rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.0;
-      padding: 0.5rem clamp(1.5rem, 5vw, 4rem) clamp(1rem, 2vw, 1.5rem);
-      max-width: 900px;
-    }
-    .hero-heading em { font-style: normal; color: var(--accent); }
-
-    /* ─── HERO TYPEWRITER ────────────────────────────────────────── */
-    #heroHeading {
-      font-size: clamp(1.5rem, 3.5vw, 3.5rem);
-      min-height: 2.6em;
-    }
-    .hero-phrase {
-      display: none;
-    }
-    #typewriter-line {
-      display: block;
-    }
-    #typewriter-line em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    #typewriter-line::after {
-      content: '';
-      display: inline-block;
-      width: 3px;
-      height: 0.85em;
-      background: var(--accent);
-      margin-left: 4px;
-      vertical-align: middle;
-      border-radius: 2px;
-      animation: blink 0.75s step-end infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
-
-    /* ─── FEATURED REEL ──────────────────────────────────────────── */
-    .hero-reel {
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-    }
-    .reel-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      max-height: 75vh;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #000;
-      cursor: pointer;
-    }
-    .reel-bg-iframe {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      transform: translateY(-50%);
-      pointer-events: none;
-      border: 0;
-      opacity: 0.45;
-    }
-    .reel-bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.65);
-    }
-    .reel-play-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      transition: background 0.3s;
-    }
-    .reel-wrapper:hover .reel-play-overlay { background: rgba(0,159,217,0.06); }
-    .reel-play-btn {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      border: 2px solid rgba(255,255,255,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s var(--ease), background 0.25s, border-color 0.25s;
-    }
-    .reel-wrapper:hover .reel-play-btn {
-      transform: scale(1.12);
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-    .reel-play-btn svg { fill: white; margin-left: 5px; }
-    .reel-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* ─── SECTION SCAFFOLDING ────────────────────────────────────── */
-    .section {
-      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem);
-    }
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--accent);
-    }
-    .section-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: gap 0.2s;
-    }
-    .section-link:hover { gap: 0.6rem; }
-
-    /* ─── CATEGORY TABS ──────────────────────────────────────────── */
-    .work-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      padding: 0.5rem 1.1rem;
-      border-radius: 100px;
-      border: 1.5px solid var(--border);
-      background: transparent;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text-mid);
-      transition: all 0.2s;
-    }
-    .tab-btn:hover {
-      border-color: var(--text);
-      color: var(--text);
-    }
-    .tab-btn.active {
-      background: var(--text);
-      border-color: var(--text);
-      color: var(--bg);
-    }
-
-    /* ─── WORK GRID ──────────────────────────────────────────────── */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 0.75rem;
-    }
-
-    .work-card { position: relative; overflow: hidden; border-radius: 12px; cursor: pointer; }
-    .work-card:nth-child(1) { grid-column: span 7; }
-    .work-card:nth-child(2) { grid-column: span 5; }
-    .work-card:nth-child(3) { grid-column: span 4; }
-    .work-card:nth-child(4) { grid-column: span 4; }
-    .work-card:nth-child(5) { grid-column: span 4; }
-    .work-card:nth-child(n+6) { grid-column: span 4; }
-
-    .card-inner {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    /* ─── LIGHTBOX ───────────────────────────────────────────────── */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s var(--ease);
-    }
-    .lightbox.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .lightbox-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(15, 15, 15, 0.75);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-    .lightbox-card {
-      position: relative;
-      z-index: 1;
-      background: var(--surface);
-      border-radius: 20px;
-      overflow: hidden;
-      width: min(860px, 90vw);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-      transform: scale(0.92);
-      transition: transform 0.35s var(--ease);
-    }
-    .lightbox.open .lightbox-card {
-      transform: scale(1);
-    }
-    .lightbox-thumb {
-      width: 100%;
-      aspect-ratio: 16/9;
-    }
-    .lightbox-meta {
-      padding: 1.25rem 1.5rem 1.5rem;
-    }
-    .lightbox-category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.3rem;
-    }
-    .lightbox-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .lightbox-desc {
-      font-size: 0.85rem;
-      color: var(--text-mid);
-      margin-top: 0.25rem;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      z-index: 2;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .lightbox-close:hover { background: rgba(255,255,255,0.3); }
-    .lightbox-close svg { fill: white; width: 18px; height: 18px; }
-
-    /* Placeholder thumbnail gradients */
-    .card-thumb {
-      position: absolute;
-      inset: 0;
-      transition: transform 0.5s var(--ease);
-    }
-    .work-card:hover .card-thumb { transform: scale(1.04); }
-
-    .thumb-video-1 { background: linear-gradient(145deg, #0f0f0f, #2a2a2a, #1a1a1a); }
-    .thumb-video-2 { background: linear-gradient(160deg, #1c1c1c, #333, #111); }
-    .thumb-video-3 { background: linear-gradient(130deg, #2F3033, #252525, #0d0d0d); }
-
-    .thumb-motion-1 { background: linear-gradient(145deg, #0d1b2a, #1b3a5c, #0a1628); }
-    .thumb-motion-2 { background: linear-gradient(160deg, #1a0a2e, #3d1466, #12071e); }
-    .thumb-motion-3 { background: linear-gradient(130deg, #0a2010, #1a4020, #061408); }
-
-    .thumb-ai-1 { background: linear-gradient(145deg, #1a0a00, #3d1a00, #2a1200); }
-    .thumb-ai-2 { background: linear-gradient(160deg, #0d0020, #250040, #160030); }
-    .thumb-ai-3 { background: linear-gradient(130deg, #001a1a, #004040, #000d0d); }
-
-    .card-thumb::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .card-thumb-icon {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.15;
-    }
-    .card-thumb-icon svg { width: 48px; height: 48px; fill: white; }
-
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(20, 20, 20, 0.55);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .work-card:hover .card-overlay { opacity: 1; }
-    .overlay-play {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255,255,255,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: scale(0.8);
-      transition: transform 0.3s var(--ease);
-    }
-    .work-card:hover .overlay-play { transform: scale(1); }
-    .overlay-play svg { fill: white; margin-left: 3px; }
-
-    .card-meta {
-      padding: 0.9rem 0.2rem 0;
-    }
-    .card-category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-    .card-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-    .card-desc {
-      font-size: 0.8rem;
-      color: var(--text-mid);
-      margin-top: 0.2rem;
-    }
-
-    .work-card.hidden { display: none; }
-
-    /* ─── ABOUT ──────────────────────────────────────────────────── */
-    #about {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      background: var(--surface);
-    }
-    #about::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      opacity: 0.03;
-      pointer-events: none;
-      z-index: 0;
-    }
-    #about::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg,
-        rgba(0, 159, 217, 0.04) 0%,
-        rgba(248, 247, 244, 0) 40%,
-        rgba(0, 159, 217, 0.03) 100%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    #about .about-grid {
-      position: relative;
-      z-index: 1;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, 400px) 1fr;
-      gap: clamp(2rem, 6vw, 6rem);
-      align-items: center;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .about-photo {
-      aspect-ratio: 3/4;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #e0ddd8;
-    }
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-    .about-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .about-name {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .about-name em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    .about-bio {
-      color: var(--text-mid);
-      font-size: 1rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-    .about-stats {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      flex-wrap: nowrap;
-    }
-    .stat-item {
-      flex: 1;
-      min-width: 0;
-    }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: var(--accent);
-      display: block;
-    }
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      margin-top: 0.1rem;
-    }
-    @keyframes countUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: none; }
-    }
-    .stat-num { animation: countUp 0.6s var(--ease) both; }
-    .stat-item:nth-child(1) .stat-num { animation-delay: 0.1s; }
-    .stat-item:nth-child(2) .stat-num { animation-delay: 0.25s; }
-    .stat-item:nth-child(3) .stat-num { animation-delay: 0.4s; }
-
-    /* ─── TOOLS ──────────────────────────────────────────────────── */
-    #tools {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding-top: 3rem;
-    }
-    #tools .section-header {
-      justify-content: center;
-      text-align: center;
-    }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(120px, 150px));
-      gap: 1rem;
-      justify-content: center;
-    }
-    @media (max-width: 860px) {
-      .tools-grid { grid-template-columns: repeat(4, minmax(110px, 140px)); }
-    }
-    @media (max-width: 600px) {
-      .tools-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    .tool-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1.5rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      background: var(--bg);
-      transition: border-color 0.25s, transform 0.25s var(--ease), box-shadow 0.25s;
-      cursor: default;
-    }
-    .tool-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,159,217,0.10);
-    }
-    .tool-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .tool-icon-img {
-      background: transparent;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .tool-icon-img img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-    .tool-name {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text);
-      text-align: center;
-      line-height: 1.3;
-    }
-    .tool-category {
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
-    #testimonials {
-      border-top: 1px solid var(--border);
-      padding-left: 0;
-      padding-right: 0;
-      position: relative;
-      background: url('parallax-bg-6-testimonials_NEW.png') center/cover no-repeat fixed;
-    }
-    #testimonials::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(14, 14, 14, 0.6);
-      pointer-events: none;
-    }
-    #testimonials .testi-intro,
-    #testimonials .testi-marquee {
-      position: relative;
-      z-index: 1;
-    }
-    .testi-intro {
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-      text-align: center;
-    }
-    .testi-intro .section-title { margin-bottom: 0.5rem; }
-    .testi-intro p {
-      font-size: 1.1rem;
-      color: #ffffff;
-      line-height: 1.7;
-      white-space: nowrap;
-    }
-
-    .testi-marquee {
-      overflow: hidden;
-      width: 100%;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-    }
-    .testi-track {
-      display: flex;
-      gap: 1.25rem;
-      width: max-content;
-      animation: marqueeScroll 55s linear infinite;
-      will-change: transform;
-    }
-    .testi-marquee:hover .testi-track {
-      animation-play-state: paused;
-    }
-    @keyframes marqueeScroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    .testi-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      width: 380px;
-      flex-shrink: 0;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease);
-    }
-    .testi-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 12px 36px rgba(0,159,217,0.10);
-      transform: translateY(-4px);
-    }
-    .testi-card.featured {
-      background: var(--surface);
-      border-color: var(--border);
-      color: var(--text);
-    }
-    .testi-card.featured .testi-quote { color: var(--text); }
-    .testi-card.featured .testi-author-name { color: var(--text); }
-    .testi-card.featured .testi-author-role { color: var(--text-mid); }
-    .testi-card.featured .testi-stars { color: var(--accent); }
-    .testi-card.featured .testi-author { border-top-color: var(--border); }
-    .testi-stars {
-      display: flex;
-      gap: 3px;
-      color: var(--accent);
-      font-size: 0.9rem;
-    }
-    .testi-quote {
-      font-size: 0.92rem;
-      line-height: 1.75;
-      color: var(--text);
-      flex: 1;
-    }
-    .testi-quote::before {
-      content: '\201C';
-      font-size: 2rem;
-      line-height: 0;
-      vertical-align: -0.5rem;
-      margin-right: 2px;
-      color: var(--accent);
-      font-family: Georgia, serif;
-    }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-    .testi-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #007AAA);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: white;
-      flex-shrink: 0;
-    }
-    .testi-author-name {
-      font-family: var(--font-display);
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .testi-author-role {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-mid);
-    }
-
-    /* ─── CONTACT ────────────────────────────────────────────────── */
-    #contact {
-      border-top: 1px solid var(--border);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: clamp(2rem, 6vw, 6rem);
-      align-items: start;
-    }
-    .contact-heading {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: var(--accent);
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-    .contact-sub {
-      color: var(--text-mid);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .contact-email {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      transition: color 0.2s;
-    }
-    .contact-email:hover { color: var(--accent); }
-    .contact-email svg { flex-shrink: 0; }
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-    }
-    .social-link {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      border: 1.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .social-link:hover {
-      border-color: var(--accent);
-      background: var(--accent);
-    }
-    .social-link:hover svg { fill: white; }
-    .social-link svg { fill: var(--text-mid); transition: fill 0.2s; }
-
-    .contact-form {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: clamp(1.5rem, 4vw, 2.5rem);
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      letter-spacing: 0.02em;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      background: var(--bg);
-      font-size: 0.9rem;
-      color: var(--text);
-      transition: border-color 0.2s;
-      outline: none;
-      resize: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      background: var(--surface);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--border); }
-    .form-submit {
-      width: 100%;
-      padding: 0.85rem;
-      background: var(--text);
-      color: var(--bg);
-      border: none;
-      border-radius: 8px;
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s var(--ease), transform 0.25s var(--ease), box-shadow 0.3s;
-      letter-spacing: -0.01em;
-      position: relative;
-      overflow: hidden;
-    }
-    .form-submit::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
-      transform: translateX(-100%);
-      transition: transform 0.5s var(--ease);
-    }
-    .form-submit:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 159, 217, 0.4);
-    }
-    .form-submit:hover::after { transform: translateX(100%); }
-    .form-submit:active { transform: translateY(0); box-shadow: none; }
-
-    /* ─── FOOTER ─────────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem clamp(1.5rem, 5vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-logo img {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
-    .footer-copy {
-      font-size: 0.8rem;
-      color: var(--text-mid);
-    }
-    .footer-nav {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .footer-nav a {
-      font-size: 0.8rem;
-      color: var(--text-mid);
-      transition: color 0.2s;
-    }
-    .footer-nav a:hover { color: var(--text); }
-
-    /* ─── SCROLL REVEAL ──────────────────────────────────────────── */
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ─── MOBILE ─────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: var(--nav-h);
-        left: 0; right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
-        gap: 1.25rem;
-      }
-      .nav-cta {
-        display: inline-block;
-        width: fit-content;
-      }
-
-      .hero-heading { font-size: clamp(2rem, 10vw, 3.5rem); }
-
-      .work-card:nth-child(1),
-      .work-card:nth-child(2),
-      .work-card:nth-child(3),
-      .work-card:nth-child(4),
-      .work-card:nth-child(5) { grid-column: span 12; }
-
-      .about-grid { grid-template-columns: 1fr; }
-      .about-photo { aspect-ratio: 3/2; }
-
-      .contact-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-
-      footer { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-      .footer-nav { flex-wrap: wrap; }
-
-      .reel-wrapper { aspect-ratio: 16/9; }
-    }
-
-    @media (max-width: 480px) {
-      .work-grid { gap: 0.75rem; }
-    }
-
-    /* ─── VIDEO MODAL ────────────────────────────────────────────── */
-    .video-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s var(--ease);
-    }
-    .video-modal.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .video-modal-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-    .video-modal-container {
-      position: relative;
-      z-index: 1;
-      width: min(1200px, 92vw);
-      transform: scale(0.93);
-      transition: transform 0.35s var(--ease);
-    }
-    .video-modal.open .video-modal-container {
-      transform: scale(1);
-    }
-    .video-modal-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-    }
-    .video-modal-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .video-modal-close {
-      position: absolute;
-      top: -48px;
-      right: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .video-modal-close:hover { background: rgba(255,255,255,0.3); }
-  </style>
-</head>
-<body>
-
-  <!-- ─── NAV ──────────────────────────────────────────── -->
-  <nav>
-    <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Jeff Auxilio" />
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#contact" class="nav-cta">Let's work</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- ─── HERO ─────────────────────────────────────────── -->
-  <section class="hero">
-    <span class="hero-label reveal">Motion. Vision. Made.</span>
-    <h1 class="hero-heading reveal" id="heroHeading">
-      <span id="typewriter-line"></span>
-    </h1>
-    <div class="hero-reel">
-      <div class="reel-wrapper" id="reelBtn" role="button" tabindex="0" aria-label="Play Showreel">
-        <iframe class="reel-bg-iframe"
-          src="https://www.youtube.com/embed/2azRgslvF5Q?autoplay=1&mute=1&loop=1&playlist=2azRgslvF5Q&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playsinline=1"
-          allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="reel-bg-overlay"></div>
-        <div class="reel-play-overlay">
-          <div class="reel-play-btn">
-            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="reel-label">Play Showreel</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── WORK ──────────────────────────────────────────── -->
-  <section class="section" id="work">
-    <div class="section-header reveal">
-      <h2 class="section-title">Selected Work</h2>
-    </div>
-
-    <div class="work-tabs reveal">
-      <button class="tab-btn active" data-filter="all">All</button>
-      <button class="tab-btn" data-filter="video">Video Editing</button>
-      <button class="tab-btn" data-filter="motion">Motion Graphics</button>
-      <button class="tab-btn" data-filter="ai">AI Works</button>
-      <button class="tab-btn" data-filter="reels">Reels</button>
-    </div>
-
-    <div class="work-grid" id="workGrid">
-
-      <!-- Card 1 — Video Editing (large) -->
-      <article class="work-card reveal" data-category="video"
-        data-title="Rescue U Plumbing Video Edits"
-        data-desc="Commercial · Video Editing · Fast-paced promotional edit for a plumbing service brand."
-        data-cat-label="Video Editing"
-        data-video="Rw8LkPaA_EU">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/Rw8LkPaA_EU/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <!-- ─── HERO ─────────────────────────────────────────── -->
+    <section class="hero">
+      <span class="hero-label reveal">Motion. Vision. Made.</span>
+      <h1 class="hero-heading reveal" id="heroHeading">
+        <span id="typewriter-line"></span>
+      </h1>
+      <div class="hero-reel">
+        <div
+          class="reel-wrapper"
+          id="reelBtn"
+          role="button"
+          tabindex="0"
+          aria-label="Play Showreel"
+        >
+          <iframe
+            class="reel-bg-iframe"
+            src="https://www.youtube.com/embed/2azRgslvF5Q?autoplay=1&mute=1&loop=1&playlist=2azRgslvF5Q&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playsinline=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+          <div class="reel-bg-overlay"></div>
+          <div class="reel-play-overlay">
+            <div class="reel-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">Rescue U Plumbing Video Edits</div>
-          <div class="card-desc">Commercial · Promotional video edit for a plumbing service brand</div>
-        </div>
-      </article>
-
-      <!-- Card 2 — Motion Graphics -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Michelin Teaser"
-        data-desc="Motion Graphics · Cinematic teaser with fluid motion design and dynamic typography built to create anticipation for the Michelin brand."
-        data-cat-label="Motion Graphics"
-        data-video="JCKUXOZ4ZBY">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/JCKUXOZ4ZBY/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Michelin Teaser</div>
-          <div class="card-desc">Motion Graphics · Cinematic teaser with dynamic typography and fluid motion</div>
-        </div>
-      </article>
-
-      <!-- Card 3 — AI Works -->
-      <article class="work-card reveal" data-category="ai"
-        data-title="The $900 Washing Machine Repair Nobody Warns You About"
-        data-desc="AI Works · AI-enhanced educational video with smart pacing, dynamic visuals, and engaging storytelling to hook and retain viewers."
-        data-cat-label="AI Works"
-        data-video="aC9fe12o41I">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/aC9fe12o41I/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">AI Works</div>
-          <div class="card-title">The $900 Washing Machine Repair</div>
-          <div class="card-desc">AI Works · AI-enhanced educational video with dynamic storytelling</div>
-        </div>
-      </article>
-
-      <!-- Card 4 — Motion Graphics: Artist Guild Intro -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Artist Guild Intro Video"
-        data-desc="Motion Graphics · Bold and energetic intro animation crafted to establish the Artist Guild brand identity with style and impact."
-        data-cat-label="Motion Graphics"
-        data-video="NuXkFryJ-Ho">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/NuXkFryJ-Ho/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Artist Guild Intro Video</div>
-          <div class="card-desc">Motion Graphics · Bold intro animation establishing brand identity</div>
-        </div>
-      </article>
-
-      <!-- Card 5 — Motion Graphics: Ignite GameFowls -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Ignite GameFowls Video"
-        data-desc="Motion Graphics · High-energy motion graphics video with dynamic visuals and striking typography designed to ignite passion and energy."
-        data-cat-label="Motion Graphics"
-        data-video="xfcubJAXq1s">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/xfcubJAXq1s/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Ignite GameFowls Video</div>
-          <div class="card-desc">Motion Graphics · High-energy visuals with striking dynamic typography</div>
-        </div>
-      </article>
-
-      <!-- Card 6 — Motion Graphics: Kickstart Video Challenge -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Kickstart Video Challenge"
-        data-desc="Motion Graphics · Motivational motion graphics piece designed to inspire participation and drive excitement for a video challenge campaign."
-        data-cat-label="Motion Graphics"
-        data-video="nMbY0rSx8Nc">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/nMbY0rSx8Nc/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Kickstart Video Challenge</div>
-          <div class="card-desc">Motion Graphics · Motivational campaign piece to drive participation</div>
-        </div>
-      </article>
-
-      <!-- Card 7 — Motion Graphics: Shippit Hype Reel -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Shippit Hype Reel"
-        data-desc="Motion Graphics · Fast-paced hype reel packed with slick transitions and motion design to showcase Shippit's brand energy and momentum."
-        data-cat-label="Motion Graphics"
-        data-video="R8-MN5wD2GY">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/R8-MN5wD2GY/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Shippit Hype Reel</div>
-          <div class="card-desc">Motion Graphics · Slick transitions and motion design showcasing brand energy</div>
-        </div>
-      </article>
-
-      <!-- Card 8 — Motion Graphics: Shippit Explainer Video -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Shippit Explainer Video"
-        data-desc="Motion Graphics · Clear and engaging animated explainer breaking down Shippit's platform features with smooth motion and on-brand visuals."
-        data-cat-label="Motion Graphics"
-        data-video="A5NaKy3U3JQ">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/A5NaKy3U3JQ/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Shippit Explainer Video</div>
-          <div class="card-desc">Motion Graphics · Animated explainer with smooth motion and on-brand visuals</div>
-        </div>
-      </article>
-
-      <!-- Card 5 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="TPB VSL Video Edit"
-        data-desc="VSL · Sales video edit crafted to convert viewers into customers with sharp pacing and persuasive flow."
-        data-cat-label="Video Editing"
-        data-video="i9gnThCIO4I">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/i9gnThCIO4I/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">TPB VSL Video Edit</div>
-          <div class="card-desc">VSL · Sales video crafted to convert with sharp pacing</div>
-        </div>
-      </article>
-
-      <!-- Card 6 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="Speaker Bizcon 2025 Video Edit"
-        data-desc="Promotional · High-energy event promo edit designed to build hype and drive registrations for Bizcon 2025."
-        data-cat-label="Video Editing"
-        data-video="hoonzJaD-gc">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/hoonzJaD-gc/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">Speaker Bizcon 2025 Video Edit</div>
-          <div class="card-desc">Promotional · Event promo built to drive hype and registrations</div>
-        </div>
-      </article>
-
-      <!-- Card 7 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="TPB Video Summit"
-        data-desc="Promotional · Dynamic summit promo edit crafted to build excitement and drive attendance for a high-impact business event."
-        data-cat-label="Video Editing"
-        data-video="51X5kV7oM4E">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/51X5kV7oM4E/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">TPB Video Summit</div>
-          <div class="card-desc">Promotional · Summit promo built to drive excitement and attendance</div>
-        </div>
-      </article>
-
-      <!-- Card 8 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="Michelin Showreel"
-        data-desc="Promotional · Sleek and cinematic showreel edit for a globally recognized brand, highlighting product quality and performance."
-        data-cat-label="Video Editing"
-        data-video="fOkfUwEb_oc">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/fOkfUwEb_oc/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">Michelin Showreel</div>
-          <div class="card-desc">Promotional · Cinematic brand showreel for a globally recognized brand</div>
-        </div>
-      </article>
-
-      <!-- Card 9 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="Elaine Allen Video Ad"
-        data-desc="Video Ad · Compelling promotional ad edit designed to capture attention, build trust, and drive action for a personal brand."
-        data-cat-label="Video Editing"
-        data-video="IqYzz9EwY3w">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/IqYzz9EwY3w/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">Elaine Allen Video Ad</div>
-          <div class="card-desc">Video Ad · Promotional edit built to capture attention and drive action</div>
-        </div>
-      </article>
-
-      <!-- Card 10 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="LJ Building Co Video Edit"
-        data-desc="Commercial · Professional brand video edit showcasing LJ Building Co's craftsmanship, projects, and commitment to quality construction."
-        data-cat-label="Video Editing"
-        data-video="NWn81q7_AT4">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/NWn81q7_AT4/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">LJ Building Co Video Edit</div>
-          <div class="card-desc">Commercial · Brand video showcasing craftsmanship and quality construction</div>
-        </div>
-      </article>
-
-      <!-- Card 11 — Video Editing -->
-      <article class="work-card reveal" data-category="video"
-        data-title="EB Pearls Pricing Video"
-        data-desc="Explainer · Clean and engaging pricing explainer video crafted to communicate value, build confidence, and guide potential clients through service offerings."
-        data-cat-label="Video Editing"
-        data-video="NVt_KCRMX1o">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/NVt_KCRMX1o/maxresdefault.jpg') center/cover no-repeat;">
-          </div>
-          <div class="card-overlay">
-            <div class="overlay-play">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Video Editing</div>
-          <div class="card-title">EB Pearls Pricing Video</div>
-          <div class="card-desc">Explainer · Pricing explainer designed to communicate value and guide clients</div>
-        </div>
-      </article>
-
-      <!-- Card: The Time is Now -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="The Time is Now — Andy Video Edit"
-        data-desc="Motion Graphics · Powerful and emotionally driven motion piece crafted to inspire action and connect with audiences on a personal level."
-        data-cat-label="Motion Graphics"
-        data-video="vK55Pwcb0KQ">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/vK55Pwcb0KQ/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">The Time is Now — Andy Video Edit</div>
-          <div class="card-desc">Motion Graphics · Emotionally driven piece crafted to inspire action</div>
-        </div>
-      </article>
-
-      <!-- Card: Mentorship Millionaire -->
-      <article class="work-card reveal" data-category="motion"
-        data-title="Mentorship Millionaire Video Edit"
-        data-desc="Motion Graphics · High-impact motion piece designed to build credibility, showcase transformation, and attract clients to a premium mentorship program."
-        data-cat-label="Motion Graphics"
-        data-video="yAaEL0QrQGI">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/yAaEL0QrQGI/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">Motion Graphics</div>
-          <div class="card-title">Mentorship Millionaire Video Edit</div>
-          <div class="card-desc">Motion Graphics · High-impact piece to build credibility and attract clients</div>
-        </div>
-      </article>
-
-      <!-- AI Works 2 -->
-      <article class="work-card reveal" data-category="ai"
-        data-title="Signs She Likes You But Won't Admit It"
-        data-desc="AI Works · AI-driven psychology explainer with compelling visuals and smart editing designed to maximize watch time and audience engagement."
-        data-cat-label="AI Works"
-        data-video="KL6lFlVpZI8">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/KL6lFlVpZI8/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">AI Works</div>
-          <div class="card-title">Signs She Likes You But Won't Admit It</div>
-          <div class="card-desc">AI Works · Psychology explainer built to maximize watch time</div>
-        </div>
-      </article>
-
-      <!-- AI Works 3 -->
-      <article class="work-card reveal" data-category="ai"
-        data-title="If These Happen to You, You're More Attractive Than You Realize"
-        data-desc="AI Works · Engaging AI-assisted video combining sharp editing, motion elements, and psychological hooks to keep viewers watching till the end."
-        data-cat-label="AI Works"
-        data-video="HUy7dva4CNM">
-        <div class="card-inner">
-          <div class="card-thumb" style="background: #000 url('https://img.youtube.com/vi/HUy7dva4CNM/maxresdefault.jpg') center/cover no-repeat;"></div>
-          <div class="card-overlay"><div class="overlay-play"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        </div>
-        <div class="card-meta">
-          <div class="card-category">AI Works</div>
-          <div class="card-title">You're More Attractive Than You Realize</div>
-          <div class="card-desc">AI Works · AI-assisted edit with psychological hooks to retain viewers</div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ─── ABOUT ─────────────────────────────────────────── -->
-  <section class="section" id="about">
-    <div class="about-grid">
-      <div class="about-photo reveal">
-        <img src="about-photo.png" alt="Jeff — Video Editor & Motion Graphics Artist" />
-      </div>
-      <div class="about-content">
-        <p class="about-eyebrow reveal">About</p>
-        <h2 class="about-name reveal">Hi, I'm <em>Jeff.</em><br /><span style="white-space:nowrap;">I edit, animate & create.</span></h2>
-        <p class="about-bio reveal">
-          I'm a video editor and motion graphics artist who turns ideas into stories that move — visually, emotionally, and strategically.
-          From fast-paced commercial edits to polished motion graphics and AI-enhanced creative workflows,
-          I craft content designed to capture attention, communicate clearly, and leave a lasting impression.
-          <br /><br />
-          Based in the Philippines and available for fulltime and freelance projects, brand content, and agency collaborations worldwide.
-        </p>
-        <div class="about-stats">
-          <div class="stat-item">
-            <span class="stat-num" data-target="7" data-suffix="+">0+</span>
-            <div class="stat-label">Years experience</div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="200" data-suffix="+">0+</span>
-            <div class="stat-label">Projects delivered</div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="8600" data-suffix="+" data-format="comma">0+</span>
-            <div class="stat-label">Creative Hours</div>
+            <span class="reel-label">Play Showreel</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── TOOLS ───────────────────────────────────────────── -->
-  <section class="section" id="tools">
-    <div class="section-header reveal">
-      <h2 class="section-title">Tools I Use</h2>
-    </div>
-    <div class="tools-grid">
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/Premiere_Pro_logo.png" alt="Premiere Pro" />
-        </div>
-        <div><div class="tool-name">Premiere Pro</div><div class="tool-category">Video</div></div>
+    <!-- ─── WORK ──────────────────────────────────────────── -->
+    <section class="section" id="work">
+      <div class="section-header reveal">
+        <h2 class="section-title">Selected Work</h2>
       </div>
 
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/After effects_logo2.png" alt="After Effects" />
-        </div>
-        <div><div class="tool-name">After Effects</div><div class="tool-category">Motion</div></div>
+      <div class="work-tabs reveal">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="video">Video Editing</button>
+        <button class="tab-btn" data-filter="motion">Motion Graphics</button>
+        <button class="tab-btn" data-filter="ai">AI Works</button>
+        <button class="tab-btn" data-filter="reels">Reels</button>
       </div>
 
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/Adobe_Photoshop_logo.png" alt="Photoshop" />
-        </div>
-        <div><div class="tool-name">Photoshop</div><div class="tool-category">Design</div></div>
+      <div class="work-grid" id="workGrid">
+        <!-- Card 1 — Video Editing (large) -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="Rescue U Plumbing Video Edits"
+          data-desc="Commercial · Video Editing · Fast-paced promotional edit for a plumbing service brand."
+          data-cat-label="Video Editing"
+          data-video="Rw8LkPaA_EU"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/Rw8LkPaA_EU/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">Rescue U Plumbing Video Edits</div>
+            <div class="card-desc">
+              Commercial · Promotional video edit for a plumbing service brand
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 — Motion Graphics -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Michelin Teaser"
+          data-desc="Motion Graphics · Cinematic teaser with fluid motion design and dynamic typography built to create anticipation for the Michelin brand."
+          data-cat-label="Motion Graphics"
+          data-video="JCKUXOZ4ZBY"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/JCKUXOZ4ZBY/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Michelin Teaser</div>
+            <div class="card-desc">
+              Motion Graphics · Cinematic teaser with dynamic typography and
+              fluid motion
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 — AI Works -->
+        <article
+          class="work-card reveal"
+          data-category="ai"
+          data-title="The $900 Washing Machine Repair Nobody Warns You About"
+          data-desc="AI Works · AI-enhanced educational video with smart pacing, dynamic visuals, and engaging storytelling to hook and retain viewers."
+          data-cat-label="AI Works"
+          data-video="aC9fe12o41I"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/aC9fe12o41I/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">AI Works</div>
+            <div class="card-title">The $900 Washing Machine Repair</div>
+            <div class="card-desc">
+              AI Works · AI-enhanced educational video with dynamic storytelling
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 — Motion Graphics: Artist Guild Intro -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Artist Guild Intro Video"
+          data-desc="Motion Graphics · Bold and energetic intro animation crafted to establish the Artist Guild brand identity with style and impact."
+          data-cat-label="Motion Graphics"
+          data-video="NuXkFryJ-Ho"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/NuXkFryJ-Ho/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Artist Guild Intro Video</div>
+            <div class="card-desc">
+              Motion Graphics · Bold intro animation establishing brand identity
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 — Motion Graphics: Ignite GameFowls -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Ignite GameFowls Video"
+          data-desc="Motion Graphics · High-energy motion graphics video with dynamic visuals and striking typography designed to ignite passion and energy."
+          data-cat-label="Motion Graphics"
+          data-video="xfcubJAXq1s"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/xfcubJAXq1s/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Ignite GameFowls Video</div>
+            <div class="card-desc">
+              Motion Graphics · High-energy visuals with striking dynamic
+              typography
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 — Motion Graphics: Kickstart Video Challenge -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Kickstart Video Challenge"
+          data-desc="Motion Graphics · Motivational motion graphics piece designed to inspire participation and drive excitement for a video challenge campaign."
+          data-cat-label="Motion Graphics"
+          data-video="nMbY0rSx8Nc"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/nMbY0rSx8Nc/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Kickstart Video Challenge</div>
+            <div class="card-desc">
+              Motion Graphics · Motivational campaign piece to drive
+              participation
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 — Motion Graphics: Shippit Hype Reel -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Shippit Hype Reel"
+          data-desc="Motion Graphics · Fast-paced hype reel packed with slick transitions and motion design to showcase Shippit's brand energy and momentum."
+          data-cat-label="Motion Graphics"
+          data-video="R8-MN5wD2GY"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/R8-MN5wD2GY/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Shippit Hype Reel</div>
+            <div class="card-desc">
+              Motion Graphics · Slick transitions and motion design showcasing
+              brand energy
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 — Motion Graphics: Shippit Explainer Video -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Shippit Explainer Video"
+          data-desc="Motion Graphics · Clear and engaging animated explainer breaking down Shippit's platform features with smooth motion and on-brand visuals."
+          data-cat-label="Motion Graphics"
+          data-video="A5NaKy3U3JQ"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/A5NaKy3U3JQ/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Shippit Explainer Video</div>
+            <div class="card-desc">
+              Motion Graphics · Animated explainer with smooth motion and
+              on-brand visuals
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="TPB VSL Video Edit"
+          data-desc="VSL · Sales video edit crafted to convert viewers into customers with sharp pacing and persuasive flow."
+          data-cat-label="Video Editing"
+          data-video="i9gnThCIO4I"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/i9gnThCIO4I/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">TPB VSL Video Edit</div>
+            <div class="card-desc">
+              VSL · Sales video crafted to convert with sharp pacing
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="Speaker Bizcon 2025 Video Edit"
+          data-desc="Promotional · High-energy event promo edit designed to build hype and drive registrations for Bizcon 2025."
+          data-cat-label="Video Editing"
+          data-video="hoonzJaD-gc"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/hoonzJaD-gc/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">Speaker Bizcon 2025 Video Edit</div>
+            <div class="card-desc">
+              Promotional · Event promo built to drive hype and registrations
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="TPB Video Summit"
+          data-desc="Promotional · Dynamic summit promo edit crafted to build excitement and drive attendance for a high-impact business event."
+          data-cat-label="Video Editing"
+          data-video="51X5kV7oM4E"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/51X5kV7oM4E/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">TPB Video Summit</div>
+            <div class="card-desc">
+              Promotional · Summit promo built to drive excitement and
+              attendance
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="Michelin Showreel"
+          data-desc="Promotional · Sleek and cinematic showreel edit for a globally recognized brand, highlighting product quality and performance."
+          data-cat-label="Video Editing"
+          data-video="fOkfUwEb_oc"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/fOkfUwEb_oc/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">Michelin Showreel</div>
+            <div class="card-desc">
+              Promotional · Cinematic brand showreel for a globally recognized
+              brand
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 9 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="Elaine Allen Video Ad"
+          data-desc="Video Ad · Compelling promotional ad edit designed to capture attention, build trust, and drive action for a personal brand."
+          data-cat-label="Video Editing"
+          data-video="IqYzz9EwY3w"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/IqYzz9EwY3w/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">Elaine Allen Video Ad</div>
+            <div class="card-desc">
+              Video Ad · Promotional edit built to capture attention and drive
+              action
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 10 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="LJ Building Co Video Edit"
+          data-desc="Commercial · Professional brand video edit showcasing LJ Building Co's craftsmanship, projects, and commitment to quality construction."
+          data-cat-label="Video Editing"
+          data-video="NWn81q7_AT4"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/NWn81q7_AT4/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">LJ Building Co Video Edit</div>
+            <div class="card-desc">
+              Commercial · Brand video showcasing craftsmanship and quality
+              construction
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 11 — Video Editing -->
+        <article
+          class="work-card reveal"
+          data-category="video"
+          data-title="EB Pearls Pricing Video"
+          data-desc="Explainer · Clean and engaging pricing explainer video crafted to communicate value, build confidence, and guide potential clients through service offerings."
+          data-cat-label="Video Editing"
+          data-video="NVt_KCRMX1o"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/NVt_KCRMX1o/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Video Editing</div>
+            <div class="card-title">EB Pearls Pricing Video</div>
+            <div class="card-desc">
+              Explainer · Pricing explainer designed to communicate value and
+              guide clients
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: The Time is Now -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="The Time is Now — Andy Video Edit"
+          data-desc="Motion Graphics · Powerful and emotionally driven motion piece crafted to inspire action and connect with audiences on a personal level."
+          data-cat-label="Motion Graphics"
+          data-video="vK55Pwcb0KQ"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/vK55Pwcb0KQ/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">The Time is Now — Andy Video Edit</div>
+            <div class="card-desc">
+              Motion Graphics · Emotionally driven piece crafted to inspire
+              action
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Mentorship Millionaire -->
+        <article
+          class="work-card reveal"
+          data-category="motion"
+          data-title="Mentorship Millionaire Video Edit"
+          data-desc="Motion Graphics · High-impact motion piece designed to build credibility, showcase transformation, and attract clients to a premium mentorship program."
+          data-cat-label="Motion Graphics"
+          data-video="yAaEL0QrQGI"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/yAaEL0QrQGI/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">Motion Graphics</div>
+            <div class="card-title">Mentorship Millionaire Video Edit</div>
+            <div class="card-desc">
+              Motion Graphics · High-impact piece to build credibility and
+              attract clients
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Works 2 -->
+        <article
+          class="work-card reveal"
+          data-category="ai"
+          data-title="Signs She Likes You But Won't Admit It"
+          data-desc="AI Works · AI-driven psychology explainer with compelling visuals and smart editing designed to maximize watch time and audience engagement."
+          data-cat-label="AI Works"
+          data-video="KL6lFlVpZI8"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/KL6lFlVpZI8/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">AI Works</div>
+            <div class="card-title">Signs She Likes You But Won't Admit It</div>
+            <div class="card-desc">
+              AI Works · Psychology explainer built to maximize watch time
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Works 3 -->
+        <article
+          class="work-card reveal"
+          data-category="ai"
+          data-title="If These Happen to You, You're More Attractive Than You Realize"
+          data-desc="AI Works · Engaging AI-assisted video combining sharp editing, motion elements, and psychological hooks to keep viewers watching till the end."
+          data-cat-label="AI Works"
+          data-video="HUy7dva4CNM"
+        >
+          <div class="card-inner">
+            <div
+              class="card-thumb"
+              style="
+                background: #000
+                  url(&quot;https://img.youtube.com/vi/HUy7dva4CNM/maxresdefault.jpg&quot;)
+                  center/cover no-repeat;
+              "
+            ></div>
+            <div class="card-overlay">
+              <div class="overlay-play">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="card-meta">
+            <div class="card-category">AI Works</div>
+            <div class="card-title">
+              You're More Attractive Than You Realize
+            </div>
+            <div class="card-desc">
+              AI Works · AI-assisted edit with psychological hooks to retain
+              viewers
+            </div>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/Adobe_Illustrator_logo.png" alt="Illustrator" />
+    <!-- ─── ABOUT ─────────────────────────────────────────── -->
+    <section class="section" id="about">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img
+            src="about-photo.png"
+            alt="Jeff — Video Editor & Motion Graphics Artist"
+          />
         </div>
-        <div><div class="tool-name">Illustrator</div><div class="tool-category">Design</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/davinci resolve.png" alt="DaVinci Resolve" />
-        </div>
-        <div><div class="tool-name">DaVinci Resolve</div><div class="tool-category">Color / Edit</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/Blender.png" alt="Blender" />
-        </div>
-        <div><div class="tool-name">Blender</div><div class="tool-category">3D / VFX</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/midjourney.png" alt="Midjourney" />
-        </div>
-        <div><div class="tool-name">Midjourney</div><div class="tool-category">AI Image</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/nanobanana-color.png" alt="Nano Banana" />
-        </div>
-        <div><div class="tool-name">Nano Banana</div><div class="tool-category">AI Tool</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/google2.png" alt="Google Workspace" />
-        </div>
-        <div><div class="tool-name">Google Workspace</div><div class="tool-category">Productivity</div></div>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-icon tool-icon-img">
-          <img src="icons/Slack_icon.png" alt="Slack" />
-        </div>
-        <div><div class="tool-name">Slack</div><div class="tool-category">Collaboration</div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── TESTIMONIALS ────────────────────────────────────── -->
-  <section class="section" id="testimonials">
-    <div class="testi-intro reveal">
-      <h2 class="section-title">What clients say</h2>
-      <p>Kind words from people I've had the pleasure of working with.</p>
-    </div>
-
-    <div class="testi-marquee">
-      <div class="testi-track">
-
-        <!-- Set A -->
-        <div class="testi-card featured">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeff was amazing to work with — he brought out new amazing styles to bring our projects to life. He also did a personal project that was very special: a birthday video for my 2 little girls. Very lucky to have Jeffery working on our most important projects.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">MN</div>
-            <div>
-              <div class="testi-author-name">Mike Nafey</div>
-              <div class="testi-author-role">Upwork client — US</div>
+        <div class="about-content">
+          <p class="about-eyebrow reveal">About</p>
+          <h2 class="about-name reveal">
+            Hi, I'm <em>Jeff.</em><br /><span style="white-space: nowrap"
+              >I edit, animate & create.</span
+            >
+          </h2>
+          <p class="about-bio reveal">
+            I'm a video editor and motion graphics artist who turns ideas into
+            stories that move — visually, emotionally, and strategically. From
+            fast-paced commercial edits to polished motion graphics and
+            AI-enhanced creative workflows, I craft content designed to capture
+            attention, communicate clearly, and leave a lasting impression.
+            <br /><br />
+            Based in the Philippines and available for fulltime and freelance
+            projects, brand content, and agency collaborations worldwide.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num" data-target="7" data-suffix="+">0+</span>
+              <div class="stat-label">Years experience</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" data-target="200" data-suffix="+">0+</span>
+              <div class="stat-label">Projects delivered</div>
+            </div>
+            <div class="stat-item">
+              <span
+                class="stat-num"
+                data-target="8600"
+                data-suffix="+"
+                data-format="comma"
+                >0+</span
+              >
+              <div class="stat-label">Creative Hours</div>
             </div>
           </div>
         </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeff is a professional video editor with great communication skills and attention to detail. Definitely recommended!</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #7B61FF, #4A3DB5);">JO</div>
-            <div>
-              <div class="testi-author-name">Joyce Ong</div>
-              <div class="testi-author-role">New Heights Media — Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">A great freelancer with strong creative skills, reliable communication, and the ability to deliver clean, professional video edits on time.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #2ECC71, #1A8A4A);">AM</div>
-            <div>
-              <div class="testi-author-name">Aaron McCarthy</div>
-              <div class="testi-author-role">Team Aaron Mac — Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeffrey has been a dependable creative partner for our video projects. He understands direction quickly, communicates clearly, and consistently delivers polished edits that help our content look professional and engaging.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #009FD9, #005f82);">AA</div>
-            <div>
-              <div class="testi-author-name">Andy Anderson</div>
-              <div class="testi-author-role">Ultimate U — Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeffrey is reliable, talented, and easy to work with. He takes feedback well, pays attention to details, and delivers high-quality video work that matches the vision of the project.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #F59E0B, #B45309);">RO</div>
-            <div>
-              <div class="testi-author-name">Roy</div>
-              <div class="testi-author-role">Millionaires Mentorship — US</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Set B (duplicate for seamless loop) -->
-        <div class="testi-card featured">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeff was amazing to work with — he brought out new amazing styles to bring our projects to life. He also did a personal project that was very special: a birthday video for my 2 little girls. Very lucky to have Jeffery working on our most important projects.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">MN</div>
-            <div>
-              <div class="testi-author-name">Mike Nafey</div>
-              <div class="testi-author-role">Upwork client — US</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeff is a professional video editor with great communication skills and attention to detail. Definitely recommended!</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #7B61FF, #4A3DB5);">JO</div>
-            <div>
-              <div class="testi-author-name">Joyce Ong</div>
-              <div class="testi-author-role">New Heights Media — Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">A great freelancer with strong creative skills, reliable communication, and the ability to deliver clean, professional video edits on time.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #2ECC71, #1A8A4A);">AM</div>
-            <div>
-              <div class="testi-author-name">Aaron McCarthy</div>
-              <div class="testi-author-role">Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeffrey has been a dependable creative partner for our video projects. He understands direction quickly, communicates clearly, and consistently delivers polished edits that help our content look professional and engaging.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #009FD9, #005f82);">AA</div>
-            <div>
-              <div class="testi-author-name">Andy Anderson</div>
-              <div class="testi-author-role">Ultimate U — Australia</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Jeffrey is reliable, talented, and easy to work with. He takes feedback well, pays attention to details, and delivers high-quality video work that matches the vision of the project.</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #F59E0B, #B45309);">RO</div>
-            <div>
-              <div class="testi-author-name">Roy</div>
-              <div class="testi-author-role">Millionaires Mentorship — US</div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── CONTACT ───────────────────────────────────────── -->
-  <section class="section" id="contact">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2 class="contact-heading reveal">Let's build<br />something great.</h2>
-        <p class="contact-sub reveal">
-          Have a project in mind? Looking for a video editor or motion artist
-          for your next campaign? I'd love to hear from you.
-        </p>
-        <a href="mailto:jeffreyauxilio@gmail.com" class="contact-email reveal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          jeffreyauxilio@gmail.com
-        </a>
-        <div class="social-links reveal">
-          <a href="https://api.whatsapp.com/send?phone=639696352186" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    <!-- ─── TOOLS ───────────────────────────────────────────── -->
+    <section class="section" id="tools">
+      <div class="section-header reveal">
+        <h2 class="section-title">Tools I Use</h2>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/Premiere_Pro_logo.png" alt="Premiere Pro" />
+          </div>
+          <div>
+            <div class="tool-name">Premiere Pro</div>
+            <div class="tool-category">Video</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/After effects_logo2.png" alt="After Effects" />
+          </div>
+          <div>
+            <div class="tool-name">After Effects</div>
+            <div class="tool-category">Motion</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/Adobe_Photoshop_logo.png" alt="Photoshop" />
+          </div>
+          <div>
+            <div class="tool-name">Photoshop</div>
+            <div class="tool-category">Design</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/Adobe_Illustrator_logo.png" alt="Illustrator" />
+          </div>
+          <div>
+            <div class="tool-name">Illustrator</div>
+            <div class="tool-category">Design</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/davinci resolve.png" alt="DaVinci Resolve" />
+          </div>
+          <div>
+            <div class="tool-name">DaVinci Resolve</div>
+            <div class="tool-category">Color / Edit</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/Blender.png" alt="Blender" />
+          </div>
+          <div>
+            <div class="tool-name">Blender</div>
+            <div class="tool-category">3D / VFX</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/midjourney.png" alt="Midjourney" />
+          </div>
+          <div>
+            <div class="tool-name">Midjourney</div>
+            <div class="tool-category">AI Image</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/nanobanana-color.png" alt="Nano Banana" />
+          </div>
+          <div>
+            <div class="tool-name">Nano Banana</div>
+            <div class="tool-category">AI Tool</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/google2.png" alt="Google Workspace" />
+          </div>
+          <div>
+            <div class="tool-name">Google Workspace</div>
+            <div class="tool-category">Productivity</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon tool-icon-img">
+            <img src="icons/Slack_icon.png" alt="Slack" />
+          </div>
+          <div>
+            <div class="tool-name">Slack</div>
+            <div class="tool-category">Collaboration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ────────────────────────────────────── -->
+    <section class="section" id="testimonials">
+      <div class="testi-intro reveal">
+        <h2 class="section-title">What clients say</h2>
+        <p>Kind words from people I've had the pleasure of working with.</p>
+      </div>
+
+      <div class="testi-marquee">
+        <div class="testi-track">
+          <!-- Set A -->
+          <div class="testi-card featured">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeff was amazing to work with — he brought out new amazing styles
+              to bring our projects to life. He also did a personal project that
+              was very special: a birthday video for my 2 little girls. Very
+              lucky to have Jeffery working on our most important projects.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">MN</div>
+              <div>
+                <div class="testi-author-name">Mike Nafey</div>
+                <div class="testi-author-role">Upwork client — US</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeff is a professional video editor with great communication
+              skills and attention to detail. Definitely recommended!
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #7b61ff, #4a3db5)"
+              >
+                JO
+              </div>
+              <div>
+                <div class="testi-author-name">Joyce Ong</div>
+                <div class="testi-author-role">
+                  New Heights Media — Australia
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              A great freelancer with strong creative skills, reliable
+              communication, and the ability to deliver clean, professional
+              video edits on time.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #2ecc71, #1a8a4a)"
+              >
+                AM
+              </div>
+              <div>
+                <div class="testi-author-name">Aaron McCarthy</div>
+                <div class="testi-author-role">Team Aaron Mac — Australia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeffrey has been a dependable creative partner for our video
+              projects. He understands direction quickly, communicates clearly,
+              and consistently delivers polished edits that help our content
+              look professional and engaging.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #009fd9, #005f82)"
+              >
+                AA
+              </div>
+              <div>
+                <div class="testi-author-name">Andy Anderson</div>
+                <div class="testi-author-role">Ultimate U — Australia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeffrey is reliable, talented, and easy to work with. He takes
+              feedback well, pays attention to details, and delivers
+              high-quality video work that matches the vision of the project.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #f59e0b, #b45309)"
+              >
+                RO
+              </div>
+              <div>
+                <div class="testi-author-name">Roy</div>
+                <div class="testi-author-role">
+                  Millionaires Mentorship — US
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Set B (duplicate for seamless loop) -->
+          <div class="testi-card featured">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeff was amazing to work with — he brought out new amazing styles
+              to bring our projects to life. He also did a personal project that
+              was very special: a birthday video for my 2 little girls. Very
+              lucky to have Jeffery working on our most important projects.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">MN</div>
+              <div>
+                <div class="testi-author-name">Mike Nafey</div>
+                <div class="testi-author-role">Upwork client — US</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeff is a professional video editor with great communication
+              skills and attention to detail. Definitely recommended!
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #7b61ff, #4a3db5)"
+              >
+                JO
+              </div>
+              <div>
+                <div class="testi-author-name">Joyce Ong</div>
+                <div class="testi-author-role">
+                  New Heights Media — Australia
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              A great freelancer with strong creative skills, reliable
+              communication, and the ability to deliver clean, professional
+              video edits on time.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #2ecc71, #1a8a4a)"
+              >
+                AM
+              </div>
+              <div>
+                <div class="testi-author-name">Aaron McCarthy</div>
+                <div class="testi-author-role">Australia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeffrey has been a dependable creative partner for our video
+              projects. He understands direction quickly, communicates clearly,
+              and consistently delivers polished edits that help our content
+              look professional and engaging.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #009fd9, #005f82)"
+              >
+                AA
+              </div>
+              <div>
+                <div class="testi-author-name">Andy Anderson</div>
+                <div class="testi-author-role">Ultimate U — Australia</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              Jeffrey is reliable, talented, and easy to work with. He takes
+              feedback well, pays attention to details, and delivers
+              high-quality video work that matches the vision of the project.
+            </p>
+            <div class="testi-author">
+              <div
+                class="testi-avatar"
+                style="background: linear-gradient(135deg, #f59e0b, #b45309)"
+              >
+                RO
+              </div>
+              <div>
+                <div class="testi-author-name">Roy</div>
+                <div class="testi-author-role">
+                  Millionaires Mentorship — US
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ───────────────────────────────────────── -->
+    <section class="section" id="contact">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="contact-heading reveal">
+            Let's build<br />something great.
+          </h2>
+          <p class="contact-sub reveal">
+            Have a project in mind? Looking for a video editor or motion artist
+            for your next campaign? I'd love to hear from you.
+          </p>
+          <a
+            href="mailto:jeffreyauxilio@gmail.com"
+            class="contact-email reveal"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            jeffreyauxilio@gmail.com
           </a>
-          <a href="https://www.linkedin.com/in/jeffrey-auxilio/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@jeffaux19" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-          </a>
+          <div class="social-links reveal">
+            <a
+              href="https://api.whatsapp.com/send?phone=639696352186"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="WhatsApp"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jeffrey-auxilio/"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="LinkedIn"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@jeffaux19"
+              target="_blank"
+              rel="noopener"
+              class="social-link"
+              aria-label="YouTube"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <form class="contact-form" action="https://formspree.io/f/xdajrzeq" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">First name</label>
-            <input type="text" id="fname" name="fname" placeholder="Maria" required />
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xdajrzeq"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First name</label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Maria"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="Santos"
+                required
+              />
+            </div>
           </div>
           <div class="form-group">
-            <label for="lname">Last name</label>
-            <input type="text" id="lname" name="lname" placeholder="Santos" required />
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@company.com"
+              required
+            />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required />
-        </div>
-        <div class="form-group">
-          <label for="project">Project type</label>
-          <select id="project" name="project">
-            <option value="">Select a project type</option>
-            <option value="video">Video Editing</option>
-            <option value="motion">Motion Graphics</option>
-            <option value="ai">AI Works</option>
-            <option value="combo">Combination / Not sure</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Tell me about your project</label>
-          <textarea id="message" name="message" rows="4" placeholder="What are you working on? Timeline? Budget range?" required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send message →</button>
-      </form>
-    </div>
-  </section>
+          <div class="form-group">
+            <label for="project">Project type</label>
+            <select id="project" name="project">
+              <option value="">Select a project type</option>
+              <option value="video">Video Editing</option>
+              <option value="motion">Motion Graphics</option>
+              <option value="ai">AI Works</option>
+              <option value="combo">Combination / Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me about your project</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="What are you working on? Timeline? Budget range?"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send message →</button>
+        </form>
+      </div>
+    </section>
 
-  <!-- ─── FOOTER ────────────────────────────────────────── -->
-  <footer>
-    <a href="#" class="footer-logo">
-      <img src="logo.png" alt="Jeff Auxilio" />
-    </a>
-    <p class="footer-copy">© 2024 Jeff. All rights reserved.</p>
-    <ul class="footer-nav">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </footer>
+    <!-- ─── FOOTER ────────────────────────────────────────── -->
+    <footer>
+      <a href="#" class="footer-logo">
+        <img src="logo.png" alt="Jeff Auxilio" />
+      </a>
+      <p class="footer-copy">
+        © <span id="current-year"></span> Jeff. All rights reserved.
+      </p>
+      <ul class="footer-nav">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </footer>
 
-  <!-- ─── LIGHTBOX ──────────────────────────────────────── -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-backdrop" id="lb-backdrop"></div>
-    <div class="lightbox-card">
-      <button class="lightbox-close" id="lb-close" aria-label="Close">
-        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-      </button>
-      <div class="lightbox-thumb" id="lb-thumb"></div>
-      <div class="lightbox-meta">
-        <div class="lightbox-category" id="lb-cat"></div>
-        <div class="lightbox-title" id="lb-title"></div>
-        <div class="lightbox-desc" id="lb-desc"></div>
+    <!-- ─── LIGHTBOX ──────────────────────────────────────── -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-backdrop" id="lb-backdrop"></div>
+      <div class="lightbox-card">
+        <button class="lightbox-close" id="lb-close" aria-label="Close">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+        <div class="lightbox-thumb" id="lb-thumb"></div>
+        <div class="lightbox-meta">
+          <div class="lightbox-category" id="lb-cat"></div>
+          <div class="lightbox-title" id="lb-title"></div>
+          <div class="lightbox-desc" id="lb-desc"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ─── VIDEO MODAL ───────────────────────────────────── -->
-  <div class="video-modal" id="videoModal">
-    <div class="video-modal-backdrop" id="vm-backdrop"></div>
-    <div class="video-modal-container">
-      <button class="video-modal-close" id="vm-close" aria-label="Close video">
-        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-      </button>
-      <div class="video-modal-frame">
-        <iframe id="videoModalIframe" src="" frameborder="0"
-          allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <!-- ─── VIDEO MODAL ───────────────────────────────────── -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-backdrop" id="vm-backdrop"></div>
+      <div class="video-modal-container">
+        <button
+          class="video-modal-close"
+          id="vm-close"
+          aria-label="Close video"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path
+              fill="white"
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+        <div class="video-modal-frame">
+          <iframe
+            id="videoModalIframe"
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ─── SCRIPTS ───────────────────────────────────────── -->
-  <script>
-    // ── Typewriter ───────────────────────────────────────
-    const twEl     = document.getElementById('typewriter-line');
-    const twPlain  = 'I edit. I animate. I make it ';
-    const twAccent = 'unforgettable.';
-    const twFull   = twPlain + twAccent;
-    let twChar = 0, twDeleting = false;
+    <!-- ─── SCRIPTS ───────────────────────────────────────── -->
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
 
-    function renderTw() {
-      const slice = twFull.slice(0, twChar);
-      twEl.innerHTML = slice.length <= twPlain.length
-        ? slice
-        : twPlain + '<em>' + slice.slice(twPlain.length) + '</em>';
-    }
+      const overlay = document.getElementById("navOverlay");
 
-    function typeLoop() {
-      if (!twDeleting) {
-        twChar++;
-        renderTw();
-        if (twChar === twFull.length) {
-          // fully typed — pause 5s then delete
-          setTimeout(() => { twDeleting = true; typeLoop(); }, 5000);
-        } else {
-          setTimeout(typeLoop, 55);
-        }
-      } else {
-        twChar--;
-        renderTw();
-        if (twChar === 0) {
-          // fully deleted — pause briefly then retype
-          twDeleting = false;
-          setTimeout(typeLoop, 500);
-        } else {
-          setTimeout(typeLoop, 28);
-        }
+      // ── Typewriter ───────────────────────────────────────
+      const twEl = document.getElementById("typewriter-line");
+      const twPlain = "I edit. I animate. I make it ";
+      const twAccent = "unforgettable.";
+      const twFull = twPlain + twAccent;
+      let twChar = 0,
+        twDeleting = false;
+
+      function renderTw() {
+        const slice = twFull.slice(0, twChar);
+        twEl.innerHTML =
+          slice.length <= twPlain.length
+            ? slice
+            : twPlain + "<em>" + slice.slice(twPlain.length) + "</em>";
       }
-    }
-    setTimeout(typeLoop, 400);
 
-    // ── Count-up stats ───────────────────────────────────
-    const statNums = document.querySelectorAll('.stat-num[data-target]');
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = +el.dataset.target;
-        const suffix = el.dataset.suffix || '';
-        const format = el.dataset.format === 'comma';
-        const duration = 1800;
-        const step = 16;
-        const increment = target / (duration / step);
-        let current = 0;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          const display = format
-            ? Math.floor(current).toLocaleString()
-            : Math.floor(current);
-          el.textContent = display + suffix;
-        }, step);
-        countObserver.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    statNums.forEach(el => countObserver.observe(el));
-
-    // ── Hamburger menu ──────────────────────────────────
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // ── Work filter tabs ─────────────────────────────────
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const workCards = document.querySelectorAll('.work-card');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        workCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden');
+      function typeLoop() {
+        if (!twDeleting) {
+          twChar++;
+          renderTw();
+          if (twChar === twFull.length) {
+            // fully typed — pause 5s then delete
+            setTimeout(() => {
+              twDeleting = true;
+              typeLoop();
+            }, 5000);
           } else {
-            card.classList.add('hidden');
+            setTimeout(typeLoop, 55);
+          }
+        } else {
+          twChar--;
+          renderTw();
+          if (twChar === 0) {
+            // fully deleted — pause briefly then retype
+            twDeleting = false;
+            setTimeout(typeLoop, 500);
+          } else {
+            setTimeout(typeLoop, 28);
+          }
+        }
+      }
+      setTimeout(typeLoop, 400);
+
+      // ── Count-up stats ───────────────────────────────────
+      const statNums = document.querySelectorAll(".stat-num[data-target]");
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = +el.dataset.target;
+            const suffix = el.dataset.suffix || "";
+            const format = el.dataset.format === "comma";
+            const duration = 1800;
+            const step = 16;
+            const increment = target / (duration / step);
+            let current = 0;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              const display = format
+                ? Math.floor(current).toLocaleString()
+                : Math.floor(current);
+              el.textContent = display + suffix;
+            }, step);
+            countObserver.unobserve(el);
+          });
+        },
+        { threshold: 0.5 },
+      );
+      statNums.forEach((el) => countObserver.observe(el));
+
+      // ── Hamburger menu ──────────────────────────────────
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      // hamburger.addEventListener("click", () => {
+      //   navLinks.classList.toggle("open");
+      // });
+      // navLinks.querySelectorAll("a").forEach((a) => {
+      //   a.addEventListener("click", () => navLinks.classList.remove("open"));
+      // });
+
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("open");
+          overlay.classList.remove("open");
+        });
+      });
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
+        overlay.classList.toggle("open");
+      });
+
+      overlay.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("open");
+        overlay.classList.remove("open");
+      });
+
+      // ── Work filter tabs ─────────────────────────────────
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const workCards = document.querySelectorAll(".work-card");
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.dataset.filter;
+          workCards.forEach((card) => {
+            if (filter === "all" || card.dataset.category === filter) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // ── Lightbox ─────────────────────────────────────────
+      const lightbox = document.getElementById("lightbox");
+      const lbThumb = document.getElementById("lb-thumb");
+      const lbCat = document.getElementById("lb-cat");
+      const lbTitle = document.getElementById("lb-title");
+      const lbDesc = document.getElementById("lb-desc");
+
+      function openLightbox(card) {
+        const thumbClass = card.dataset.thumb || "";
+        lbThumb.className = "lightbox-thumb " + thumbClass;
+        lbCat.textContent = card.dataset.catLabel || "";
+        lbTitle.textContent = card.dataset.title || "";
+        lbDesc.textContent = card.dataset.desc || "";
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      workCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          if (card.dataset.video) {
+            videoModalIframe.src =
+              "https://www.youtube.com/embed/" +
+              card.dataset.video +
+              "?autoplay=1&rel=0&modestbranding=1";
+            videoModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+          } else {
+            openLightbox(card);
           }
         });
       });
-    });
+      document
+        .getElementById("lb-backdrop")
+        .addEventListener("click", closeLightbox);
+      document
+        .getElementById("lb-close")
+        .addEventListener("click", closeLightbox);
 
-    // ── Lightbox ─────────────────────────────────────────
-    const lightbox = document.getElementById('lightbox');
-    const lbThumb  = document.getElementById('lb-thumb');
-    const lbCat    = document.getElementById('lb-cat');
-    const lbTitle  = document.getElementById('lb-title');
-    const lbDesc   = document.getElementById('lb-desc');
+      // ── Video Modal ──────────────────────────────────────
+      const videoModal = document.getElementById("videoModal");
+      const videoModalIframe = document.getElementById("videoModalIframe");
 
-    function openLightbox(card) {
-      const thumbClass = card.dataset.thumb || '';
-      lbThumb.className = 'lightbox-thumb ' + thumbClass;
-      lbCat.textContent   = card.dataset.catLabel || '';
-      lbTitle.textContent = card.dataset.title    || '';
-      lbDesc.textContent  = card.dataset.desc     || '';
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+      function openVideoModal() {
+        // TODO: Replace the URL below with your embeddable video link
+        videoModalIframe.src =
+          "https://www.youtube.com/embed/2azRgslvF5Q?autoplay=1&rel=0&modestbranding=1";
+        videoModal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeVideoModal() {
+        videoModal.classList.remove("open");
+        videoModalIframe.src = "";
+        document.body.style.overflow = "";
+      }
 
-    workCards.forEach(card => {
-      card.addEventListener('click', () => {
-        if (card.dataset.video) {
-          videoModalIframe.src = 'https://www.youtube.com/embed/' + card.dataset.video + '?autoplay=1&rel=0&modestbranding=1';
-          videoModal.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        } else {
-          openLightbox(card);
+      document
+        .getElementById("reelBtn")
+        .addEventListener("click", openVideoModal);
+      document.getElementById("reelBtn").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openVideoModal();
         }
       });
-    });
-    document.getElementById('lb-backdrop').addEventListener('click', closeLightbox);
-    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+      document
+        .getElementById("vm-backdrop")
+        .addEventListener("click", closeVideoModal);
+      document
+        .getElementById("vm-close")
+        .addEventListener("click", closeVideoModal);
 
-    // ── Video Modal ──────────────────────────────────────
-    const videoModal       = document.getElementById('videoModal');
-    const videoModalIframe = document.getElementById('videoModalIframe');
-
-    function openVideoModal() {
-      // TODO: Replace the URL below with your embeddable video link
-      videoModalIframe.src = 'https://www.youtube.com/embed/2azRgslvF5Q?autoplay=1&rel=0&modestbranding=1';
-      videoModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeVideoModal() {
-      videoModal.classList.remove('open');
-      videoModalIframe.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('reelBtn').addEventListener('click', openVideoModal);
-    document.getElementById('reelBtn').addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openVideoModal(); }
-    });
-    document.getElementById('vm-backdrop').addEventListener('click', closeVideoModal);
-    document.getElementById('vm-close').addEventListener('click', closeVideoModal);
-
-    // ── Escape key ───────────────────────────────────────
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        closeLightbox();
-        closeVideoModal();
-      }
-    });
-  </script>
-
-</body>
+      // ── Escape key ───────────────────────────────────────
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeLightbox();
+          closeVideoModal();
+        }
+      });
+    </script>
+  </body>
 </html>
